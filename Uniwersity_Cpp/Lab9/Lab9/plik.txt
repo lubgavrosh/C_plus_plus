@@ -1,0 +1,4 @@
+To jest przykładowy tekst.
+Algorytm Karpa-Rabina służy do wyszukiwania wzorców.
+Wzorzec może pojawić się wiele razy w tekście.
+Ten tekst zawiera różne wzorce.
