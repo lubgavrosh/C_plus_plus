@@ -1,0 +1,282 @@
+﻿#include <iostream>
+#include <string>
+using namespace std;
+const size_t SIZE = 20;
+const size_t SPEED = 370;
+
+class car
+{
+
+  
+	
+public:
+	char brand[SIZE]="some car";
+	char number[SIZE] = "AA0000BB";
+	int year;
+	int maxspeed;
+	int crspeed;
+	int changespeed;
+
+	car()
+	{
+		brand[SIZE];
+		number[SIZE];
+		 year = 2000;
+		 maxspeed = 200;
+		crspeed = 20;
+		changespeed= 5;
+	}
+	
+
+	car(const char* brand, int maxspeed, int changespeed)
+	{
+		setBrand(brand);
+		setMaxspeed(maxspeed);
+		setChangespeed(changespeed);
+	}
+	car(int year, int crspeed, const char* number)
+	{
+		
+		setNumber(number);
+		setYear(year);
+	}
+	
+	
+	void print()
+	{
+
+		cout << "Brand : " << brand << endl;
+		cout << "Number : " << number << endl;
+		cout << "Year: " << year << endl;
+		cout << "Maxspeed: " << maxspeed << endl;
+		cout << "Current speed: " << crspeed << endl;
+	
+	}
+		
+	void input()
+	{
+		cout << "Enter Brand: ";
+		cin >> brand;
+		setBrand(brand);
+		cout << "Enter Number (example AA0000AA): ";
+		cin >> number;
+		setNumber(number);
+		cout << "Enter Year( 1950 for 2021): ";
+		cin >> year;
+		setYear(year);
+
+		cout << "Enter Maxspeed ( max "<<SPEED<<"): ";
+		cin >> maxspeed;
+		setMaxspeed(maxspeed);
+
+		cout << "Enter Current speed ( max " << maxspeed<< "): ";
+		cin >> crspeed;
+		setCrspeed(crspeed);
+
+		cout << "IF you want to inclease Current speed press - [1] If reduce press - [2] : " << endl;
+		cin >> changespeed;
+		setChangespeed(changespeed);
+	}
+	void setBrand(const char* newbrand)
+	{
+		if (newbrand[0] != '\0')
+		{
+			strcpy_s(brand, newbrand);
+		}
+		else
+		{
+
+			cout << "Enter corect Brand";
+			cin >> brand;
+			setBrand(brand);
+		}
+	}
+	const char* getBrand()
+	{
+		return brand;
+	}
+	void setNumber(const char* newnumber)
+	{
+		if ((newnumber[0]>=65)&& (newnumber[0] <= 90)&& (newnumber[1] >= 65) && (newnumber[1] <= 90)&& (newnumber[6] >= 65) && (newnumber[6] <= 90)&& (newnumber[7] >= 65) && (newnumber[7] <= 90))
+		{
+			strcpy_s(number, newnumber);
+		}
+		else
+		{
+
+			cout << "Enter corect number";
+			cin >> number;
+			setNumber (number);
+		}
+
+	}
+	const char* getNumber()
+	{
+		return number;
+	}
+	void setYear(int newYear)
+	{
+		if (newYear >= 1950 && newYear <= 2021)
+		{
+			year == newYear;
+		}
+		else
+		{
+		
+		cout << "Enter corect year ";
+		cin >> year;
+		setYear(year);
+	}
+	}
+
+	int getYear()
+	{
+		return year;
+	}
+
+
+	void setMaxspeed(int newmaxspeed)
+	{
+
+
+
+		if (newmaxspeed >= 0 && newmaxspeed <= maxspeed)
+		{
+			maxspeed == newmaxspeed;
+		}
+		else
+		{
+
+			cout << "Enter corect maxspeed ";
+			cin >> maxspeed;
+			setMaxspeed(maxspeed);
+		}
+	}
+	int getMaxspeed()
+	{
+		return maxspeed;
+	}
+
+	void setCrspeed(int newcrspeed)
+	{
+		if (newcrspeed >= 0 && newcrspeed <= SPEED)
+		{
+			maxspeed == newcrspeed;
+		}
+		else
+		{
+
+			cout << "Enter current maxspeed ";
+			cin >> crspeed;
+			setCrspeed(crspeed);
+		}
+	}
+
+	int getCrspeed()
+	{
+		return crspeed;
+	}
+
+	void setChangespeed(int newchangespeed)
+	{
+		int a;
+		switch (newchangespeed)
+		{
+		case 1:
+			cout << "BY how much to increase the number ( max "<<maxspeed-crspeed<<"): ";
+
+			cin >> a;
+			if (a > 0 && a <= maxspeed - crspeed) {
+				crspeed += a;
+
+			}
+			else {
+				cout << "Enter corect speed ";
+				cin >> a;
+				setChangespeed(1);
+			}
+			break;
+
+		case 2:
+			cout << "BY how much to reduce the number ( max "<<crspeed<<"): ";
+			cin >> a;
+			if (a > 0 && a <= crspeed) 
+			 {
+				crspeed -= a;
+			 }
+			else {
+				cout << "Enter corect speed ";
+				cin >> a;
+				setChangespeed(2);
+			}
+
+			break;
+		}
+
+	}
+};
+
+
+int main()
+{
+	
+		car first;
+
+		
+		cout << endl;
+		first.input();
+		first.print();
+
+
+//масив з 3 машин 
+/*
+	const int num = 3;
+	int Salon[num];
+	car one;
+	car two;
+	car three;
+	for (int i = 0; i < num; i++)
+	{
+		if (i == 0)
+		{
+
+
+			cout << endl;
+			one.input();
+
+		
+
+		}
+		if (i == 1)
+		{
+
+			system("cls");
+			cout << endl;
+			two.input();
+
+			
+		
+
+		}
+		if (i == 2)
+		{
+
+			system("cls");
+			cout << endl;
+			three.input();
+
+			
+		
+
+		}
+
+	}
+	system("cls");
+	one.print();
+	cout << endl;
+	two.print();
+	cout << endl;
+	three.print();
+	*/
+}
+
