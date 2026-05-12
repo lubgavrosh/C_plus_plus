@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Thread_paczatek/Thread_paczatek.vcxproj" Id="432ef50d-464d-40a2-a3bc-99e790c6b2be" />
+</Solution>

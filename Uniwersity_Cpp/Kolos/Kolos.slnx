@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Kolos/Kolos.vcxproj" Id="39bc96e8-df3f-4a1f-8158-b23915b071ee" />
+</Solution>
